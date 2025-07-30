@@ -1,0 +1,46 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Django stuff
+*.log
+*.pot
+*.pyc
+*.sqlite3
+db.sqlite3
+
+# Media files (user uploads)
+media/
+
+# Static files collected by collectstatic
+staticfiles/
+static/
+
+# Environment variables / secrets
+.env
+*.env
+
+# IDE / Editor settings
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# pytest / coverage / mypy
+.coverage
+.pytest_cache/
+mypy_cache/
+
+# Docker
+*.pid
+*.sock
+*.log
