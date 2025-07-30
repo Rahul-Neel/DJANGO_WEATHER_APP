@@ -16,7 +16,7 @@ def home(request):
         # 1. Empty city name check
         if not city:
             context['error'] = "Please enter a city name."
-            return render(request, 'error.html', context)
+            return render(request, 'home.html', context)
 
         # 2. Validate city name (letters, spaces, hyphens only)
         if not re.match(r'^[a-zA-Z\s\-]+$', city):

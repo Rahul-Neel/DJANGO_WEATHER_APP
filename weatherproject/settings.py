@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-8umt0&knv$r7&=1kat8$%8)go+w&#zj_8^o0=@9l7y2hsnm%qq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -41,13 +41,14 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'weatherproject.urls'
@@ -118,14 +119,14 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Where collected static files will be placed in production
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 # Your development static files
 STATICFILES_DIRS = [
-    BASE_DIR / 'static/css',
-    BASE_DIR / 'static/javascript',
-    BASE_DIR / 'static/images',
+    BASE_DIR / 'static',
 ]
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Whitenoise for production
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
