@@ -115,8 +115,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # for render
+STATIC_URL = '/static/'
+
+# Where collected static files will be placed in production
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Your development static files
+STATICFILES_DIRS = [
+    BASE_DIR / 'static/css',
+    BASE_DIR / 'static/javascript',
+    BASE_DIR / 'static/images',
+]
+
+# Whitenoise for production
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
